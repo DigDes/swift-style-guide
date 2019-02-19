@@ -2,6 +2,7 @@
 
 ## Содержание
 * [Форматирование](#форматирование)
+* [Комментарии](#комментарии)
 
 ## Форматирование
 ### Пробелы и табуляция
@@ -188,8 +189,59 @@ struct DataPoint {
     - В конце файла
 - Использование двух пустых строк подряд не допускается. [![SwiftLint: vertical_whitespace](https://img.shields.io/badge/SwiftLint-vertical__whitespace-blue.svg)][swiftlint_vertical_whitespace]
 
+## Комментарии
+- После `//` и `///` используется 1 пробел.
+- Если комментарий находится в одной строке с кодом, то он отделяется спереди двумя пробелами.
+
+##### Хорошо:
+```swift
+let initialFactor = 2  // Warm up the modulator.
+````
+
+##### Плохо:
+```swift
+let initialFactor = 2 //    Warm up the modulator.
+````
+
+- Использование блочных комментариев (`/* ... */`) не допускается.
+
+### Документация
+- Для документационных комментариев используем `///`
+- Использование Javadoc-комментариев (`/** ... */`) не допускается.
+
+##### Хорошо:
+```swift
+/// Returns the numeric value of the given digit represented as a Unicode scalar.
+///
+/// - Parameters:
+///   - digit: The Unicode scalar whose numeric value should be returned.
+///   - radix: The radix, between 2 and 36, used to compute the numeric value.
+/// - Returns: The numeric value of the scalar.
+func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
+  // ...
+}
+````
+
+##### Плохо:
+```swift
+/**
+ * Returns the numeric value of the given digit represented as a Unicode scalar.
+ *
+ * - Parameters:
+ *   - digit: The Unicode scalar whose numeric value should be returned.
+ *   - radix: The radix, between 2 and 36, used to compute the numeric value.
+ * - Returns: The numeric value of the scalar.
+ */
+func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
+  // ...
+}
+````
+- Приветствуется [использование специальной разметки][formatting quick help] для более информативного просмотра документации через Quick Help .
+- Для автоматической генерации шаблона документации можно использовать сочетание **⌘ ⌥ /**.
+
 [comment]: # (Ссылки)
 [the one true brace style]: https://en.wikipedia.org/wiki/Indentation_style#Variant:_1TBS_(OTBS)
+[formatting quick help]: https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/SymbolDocumentation.html#//apple_ref/doc/uid/TP40016497-CH51-SW1
 
 [comment]: # (Правила)
 [swiftlint_trailing_whitespace]: https://github.com/realm/SwiftLint/blob/master/Rules.md#trailing-whitespace
