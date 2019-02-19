@@ -5,12 +5,12 @@
 
 ## Форматирование
 ### Пробелы и табуляция
-- Между методами всегда оставляем одну пустую строку.
+- Используем 4 пробела вместо табуляции.
 - Строки не должны содержать "замыкающиеся" пробелы. [![SwiftLint: trailing_whitespace](https://img.shields.io/badge/SwiftLint-trailing__whitespace-blue.svg)][swiftlint_trailing_whitespace]
 
 ### Скобки
 - Используем ["единственный правильный скобочный стиль"][the one true brace style].  
-**Исключение:** блоки кода, состоящие из одной строки (но, если строка содержит логику, то рекомендуется перенести её на новую строку)
+**Исключение:** блоки кода, состоящие из одной строки (но, если строка содержит логику, то рекомендуется перенести её на новую строку).
 
 
 ##### Хорошо:
@@ -63,11 +63,11 @@ if let user = user { usernameLabel.text = user.firstName + user.middleName + use
 ````
 
 ### Ограничения по длине
-- Длина строки ограничена 120 символами.
-- Длина файла ограничена 500 строками.
+- Длина строки ограничена 120 символами. [![SwiftLint: line_length](https://img.shields.io/badge/SwiftLint-line__length-blue.svg)][swiftlint_line_length]
+- Длина файла ограничена 500 строками. [![SwiftLint: file_length](https://img.shields.io/badge/SwiftLint-file__length-blue.svg)][swiftlint_file_length]
 
 ### Точка с запятой
-- Символ ';' в конце строки не используется без необходимости.
+- Символ `; в конце строки не используется без необходимости.
 
 ##### Хорошо:
 ```swift
@@ -116,7 +116,7 @@ let nonNegativeCubes = numbers.map{$0 * $0 * $0}.filter{$0 >= 0}
 ````
 
 - Бинарные и тернарные операторы отделяются пробелом с двух сторон.
-**Исключение:** операторы `..<` и `...`
+**Исключение:** операторы `..<` и `...`.
 
 ##### Хорошо:
 ```swift
@@ -140,7 +140,7 @@ func sum(_ numbers: [Int], initialValue: Int=0) {
 let substring = string[index ..< string.endIndex]
 ````
 
-- После символов ',' и ':' ставится пробел, но перед ними не ставится.
+- После символов `,` и `:` ставится пробел, но перед ними не ставится.
 
 ##### Хорошо:
 ```swift
@@ -159,8 +159,40 @@ var nameAgeMap: [String:Int] = []
 var nameAgeMap: [String : Int] = []
 ````
 
+- Использование горизонтального выравнивания в коде запрещено.
+
+##### Хорошо:
+```swift
+struct DataPoint {
+  var value: Int
+  var primaryColor: UIColor
+}
+````
+
+##### Плохо:
+```swift
+struct DataPoint {
+  var value:        Int
+  var primaryColor: UIColor
+}
+
+struct DataPoint {
+    var primaryColor: UIColor
+           var value: Int
+}
+````
+### Вертикальные отступы
+- Одна пустая строка используется в следующих местах:
+    - Между функциями и свойствами
+    - При необходимости разделить код на логические части
+    - В конце файла
+- Использование двух пустых строк подряд не допускается. [![SwiftLint: vertical_whitespace](https://img.shields.io/badge/SwiftLint-vertical__whitespace-blue.svg)][swiftlint_vertical_whitespace]
+
 [comment]: # (Ссылки)
 [the one true brace style]: https://en.wikipedia.org/wiki/Indentation_style#Variant:_1TBS_(OTBS)
 
 [comment]: # (Правила)
 [swiftlint_trailing_whitespace]: https://github.com/realm/SwiftLint/blob/master/Rules.md#trailing-whitespace
+[swiftlint_vertical_whitespace]: https://github.com/realm/SwiftLint/blob/master/Rules.md#vertical-whitespace
+[swiftlint_line_length]: https://github.com/realm/SwiftLint/blob/master/Rules.md#line-length
+[swiftlint_file_length]: https://github.com/realm/SwiftLint/blob/master/Rules.md#file-line-length
