@@ -33,9 +33,9 @@ guard let value = value else { return 0 }
 defer { file.close() }
 
 switch someEnum {
-    case .first: return 5
-    case .second: return 10
-    case .third: return 20
+case .first: return 5
+case .second: return 10
+case .third: return 20
 }
 
 let squares = numbers.map { $0 * $0 }
