@@ -71,7 +71,7 @@ if let user = user { usernameLabel.text = user.firstName + user.middleName + use
 - Длина файла ограничена 500 строками. [![SwiftLint: file_length](https://img.shields.io/badge/SwiftLint-file__length-blue.svg)][swiftlint_file_length]
 
 ### Точка с запятой
-- Символ `; в конце строки не используется без необходимости.
+- Символ `;` в конце строки не используется без необходимости.
 
 ##### Хорошо:
 ```swift
