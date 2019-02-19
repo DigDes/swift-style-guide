@@ -20,9 +20,9 @@
 ##### Хорошо:
 ```swift
 if user.isHappy {
-    // Что-нибудь делаем
+    // ...
 } else {
-    // Делаем что-нибудь другое
+    // ...
 }
 ```
 
@@ -33,16 +33,16 @@ guard let value = value else { return 0 }
 defer { file.close() }
 
 switch someEnum {
-case .first: return 5
-case .second: return 10
-case .third: return 20
+    case .first: return 5
+    case .second: return 10
+    case .third: return 20
 }
 
 let squares = numbers.map { $0 * $0 }
 
 var someProperty: Int {
-  get { return otherObject.property }
-  set { otherObject.property = newValue }
+    get { return otherObject.property }
+    set { otherObject.property = newValue }
 }
 
 var someProperty: Int { return otherObject.somethingElse() }
@@ -54,10 +54,10 @@ required init?(coder aDecoder: NSCoder) { fatalError("no coder") }
 ```swift
 if user.isHappy
 {  
-  // Что-нибудь делаем 
+    // ...
 }  
 else {
-  // Делаем что-нибудь другое 
+    // ...
 }
 ```
 
@@ -76,16 +76,16 @@ if let user = user { usernameLabel.text = user.firstName + user.middleName + use
 ##### Хорошо:
 ```swift
 func printSum(_ a: Int, _ b: Int) {
-  let sum = a + b
-  print(sum)
+    let sum = a + b
+    print(sum)
 }
 ```
 
 ##### Плохо:
 ```swift
 func printSum(_ a: Int, _ b: Int) {
-  let sum = a + b;
-  print(sum);
+    let sum = a + b;
+    print(sum);
 }
 ```
 
@@ -95,14 +95,14 @@ func printSum(_ a: Int, _ b: Int) {
 ##### Хорошо:
 ```swift
 if (x == 0 && y == 0) || z == 0 {
-  // ...
+    // ...
 }
 ```
 
 ##### Плохо:
 ```swift
 if(x == 0 && y == 0) || z == 0 {
-  // ...
+    // ...
 }
 ```
 
@@ -127,7 +127,7 @@ let nonNegativeCubes = numbers.map{$0 * $0 * $0}.filter{$0 >= 0}
 var x = 5
 
 func sum(_ numbers: [Int], initialValue: Int = 0) {
-  // ...
+    // ...
 }
 
 let substring = string[index..<string.endIndex]
@@ -138,7 +138,7 @@ let substring = string[index..<string.endIndex]
 var x=5
 
 func sum(_ numbers: [Int], initialValue: Int=0) {
-  // ...
+    // ...
 }
 
 let substring = string[index ..< string.endIndex]
@@ -168,16 +168,16 @@ var nameAgeMap: [String : Int] = []
 ##### Хорошо:
 ```swift
 struct DataPoint {
-  var value: Int
-  var primaryColor: UIColor
+    var value: Int
+    var primaryColor: UIColor
 }
 ```
 
 ##### Плохо:
 ```swift
 struct DataPoint {
-  var value:        Int
-  var primaryColor: UIColor
+    var value:        Int
+    var primaryColor: UIColor
 }
 
 struct DataPoint {
@@ -222,7 +222,7 @@ let initialFactor = 2 //    Warm up the modulator.
 ///   - radix: The radix, between 2 and 36, used to compute the numeric value.
 /// - Returns: The numeric value of the scalar.
 func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
-  // ...
+    // ...
 }
 ```
 
@@ -237,7 +237,7 @@ func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
  * - Returns: The numeric value of the scalar.
  */
 func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
-  // ...
+    // ...
 }
 ```
 
