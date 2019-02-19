@@ -24,7 +24,7 @@ if user.isHappy {
 } else {
     // Делаем что-нибудь другое
 }
-````
+```
 
 ##### Тоже хорошо:
 ```swift
@@ -48,7 +48,7 @@ var someProperty: Int {
 var someProperty: Int { return otherObject.somethingElse() }
 
 required init?(coder aDecoder: NSCoder) { fatalError("no coder") }
-````
+```
 
 ##### Плохо:
 ```swift
@@ -59,12 +59,12 @@ if user.isHappy
 else {
   // Делаем что-нибудь другое 
 }
-````
+```
 
 ##### Плохо:
 ```swift
 if let user = user { usernameLabel.text = user.firstName + user.middleName + user.lastName }
-````
+```
 
 ### Ограничения по длине
 - Длина строки ограничена 120 символами. [![SwiftLint: line_length](https://img.shields.io/badge/SwiftLint-line__length-blue.svg)][swiftlint_line_length]
@@ -79,7 +79,7 @@ func printSum(_ a: Int, _ b: Int) {
   let sum = a + b
   print(sum)
 }
-````
+```
 
 ##### Плохо:
 ```swift
@@ -87,7 +87,7 @@ func printSum(_ a: Int, _ b: Int) {
   let sum = a + b;
   print(sum);
 }
-````
+```
 
 ### Горизонтальные отступы
 - Зарезервированные слова (такие как `if`, `guard`, `while`, `switch`) отделяются от выражения, следующего за ними, одним пробелом.
@@ -97,27 +97,27 @@ func printSum(_ a: Int, _ b: Int) {
 if (x == 0 && y == 0) || z == 0 {
   // ...
 }
-````
+```
 
 ##### Плохо:
 ```swift
 if(x == 0 && y == 0) || z == 0 {
   // ...
 }
-````
+```
 
 - Если фигурные скобки используются в одной строке с некоторым кодом, то они отделяются от него одним пробелом ('{' отделяется с двух сторон, '}' отделяется только спереди).
 
 ##### Хорошо:
 ```swift
 let nonNegativeCubes = numbers.map { $0 * $0 * $0 }.filter { $0 >= 0 }
-````
+```
 
 ##### Плохо:
 ```swift
 let nonNegativeCubes = numbers.map { $0 * $0 * $0 } .filter { $0 >= 0 }
 let nonNegativeCubes = numbers.map{$0 * $0 * $0}.filter{$0 >= 0}
-````
+```
 
 - Бинарные и тернарные операторы отделяются пробелом с двух сторон.
 **Исключение:** операторы `..<` и `...`.
@@ -131,7 +131,7 @@ func sum(_ numbers: [Int], initialValue: Int = 0) {
 }
 
 let substring = string[index..<string.endIndex]
-````
+```
 
 ##### Плохо:
 ```swift
@@ -142,7 +142,7 @@ func sum(_ numbers: [Int], initialValue: Int=0) {
 }
 
 let substring = string[index ..< string.endIndex]
-````
+```
 
 - После символов `,` и `:` ставится пробел, но перед ними не ставится.
 
@@ -151,7 +151,7 @@ let substring = string[index ..< string.endIndex]
 let numbers = [1, 2, 3]
 
 var nameAgeMap: [String: Int] = []
-````
+```
 
 ##### Плохо:
 ```swift
@@ -161,7 +161,7 @@ let numbers = [1 , 2 , 3]
 
 var nameAgeMap: [String:Int] = []
 var nameAgeMap: [String : Int] = []
-````
+```
 
 - Использование горизонтального выравнивания в коде запрещено.
 
@@ -171,7 +171,7 @@ struct DataPoint {
   var value: Int
   var primaryColor: UIColor
 }
-````
+```
 
 ##### Плохо:
 ```swift
@@ -184,7 +184,8 @@ struct DataPoint {
     var primaryColor: UIColor
            var value: Int
 }
-````
+```
+
 ### Вертикальные отступы
 - Одна пустая строка используется в следующих местах:
     - Между функциями и свойствами
@@ -199,12 +200,12 @@ struct DataPoint {
 ##### Хорошо:
 ```swift
 let initialFactor = 2  // Warm up the modulator.
-````
+```
 
 ##### Плохо:
 ```swift
 let initialFactor = 2 //    Warm up the modulator.
-````
+```
 
 - Использование блочных комментариев (`/* ... */`) не допускается.
 
@@ -223,7 +224,7 @@ let initialFactor = 2 //    Warm up the modulator.
 func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
   // ...
 }
-````
+```
 
 ##### Плохо:
 ```swift
@@ -238,7 +239,7 @@ func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
 func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
   // ...
 }
-````
+```
 
 - Приветствуется [использование специальной разметки][formatting quick help] для более информативного просмотра документации через Quick Help .
 - Для автоматической генерации шаблона документации можно использовать сочетание **⌘ ⌥ /**.
