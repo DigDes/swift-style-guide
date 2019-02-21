@@ -67,7 +67,7 @@ if let user = user { usernameLabel.text = user.firstName + user.middleName + use
 ```
 
 ### Ограничения по длине
-- Длина строки ограничена 120 символами. [![SwiftLint: line_length](https://img.shields.io/badge/SwiftLint-line__length-blue.svg)][swiftlint_line_length]
+- Длина строки ограничена 140 символами. [![SwiftLint: line_length](https://img.shields.io/badge/SwiftLint-line__length-blue.svg)][swiftlint_line_length]
 - Длина файла ограничена 500 строками. [![SwiftLint: file_length](https://img.shields.io/badge/SwiftLint-file__length-blue.svg)][swiftlint_file_length]
 
 ### Точка с запятой
@@ -106,7 +106,7 @@ if(x == 0 && y == 0) || z == 0 {
 }
 ```
 
-- Если фигурные скобки используются в одной строке с некоторым кодом, то они отделяются от него одним пробелом ('{' отделяется с двух сторон, '}' отделяется только спереди).
+- Если фигурные скобки используются в одной строке с некоторым кодом, то они отделяются от него одним пробелом (`{` отделяется с двух сторон, `}` отделяется только спереди).
 
 ##### Хорошо:
 ```swift
@@ -199,12 +199,12 @@ struct DataPoint {
 
 ##### Хорошо:
 ```swift
-let initialFactor = 2  // Warm up the modulator.
+let initialFactor = 2  // Комментарий.
 ```
 
 ##### Плохо:
 ```swift
-let initialFactor = 2 //    Warm up the modulator.
+let initialFactor = 2 //    Комментарий.
 ```
 
 - Использование блочных комментариев (`/* ... */`) не допускается.
@@ -215,12 +215,12 @@ let initialFactor = 2 //    Warm up the modulator.
 
 ##### Хорошо:
 ```swift
-/// Returns the numeric value of the given digit represented as a Unicode scalar.
+/// Возвращает числовое значение заданной цифры, представленной в виде UnicodeScalar.
 ///
 /// - Parameters:
-///   - digit: The Unicode scalar whose numeric value should be returned.
-///   - radix: The radix, between 2 and 36, used to compute the numeric value.
-/// - Returns: The numeric value of the scalar.
+///   - digit: Unicode-скаляр, числовое значение которого должно быть возвращено.
+///   - radix: Основание между 2 и 36, используемое для вычисления числового значения.
+/// - Returns: Числовое значение скаляра.
 func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
     // ...
 }
@@ -229,12 +229,12 @@ func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
 ##### Плохо:
 ```swift
 /**
- * Returns the numeric value of the given digit represented as a Unicode scalar.
+ * Возвращает числовое значение заданной цифры, представленной в виде UnicodeScalar.
  *
  * - Parameters:
- *   - digit: The Unicode scalar whose numeric value should be returned.
- *   - radix: The radix, between 2 and 36, used to compute the numeric value.
- * - Returns: The numeric value of the scalar.
+ *   - digit: Unicode-скаляр, числовое значение которого должно быть возвращено.
+ *   - radix: Основание между 2 и 36, используемое для вычисления числового значения.
+ * - Returns: Числовое значение скаляра.
  */
 func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
     // ...
