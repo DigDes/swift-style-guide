@@ -248,6 +248,22 @@ func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
 
 ## Константы
 
+## Именование графических ресурсов
+
+<!--Image names should be named consistently to preserve organization and developer sanity. They should be named as one camel case string with a description of their purpose, followed by the un-prefixed name of the class or property they are customizing (if there is one), followed by a further description of color and/or placement, and finally their state.//-->
+
+Изображения должны быть названы в [ВерблюжьемРегистре](http://ru.wikipedia.org/wiki/CamelCase) с описанием их назначения, содержать имя класса или свойства, для которого они предназначены (если такое имеется), далее идет цвет или расположение, и в конце состояние элемента, для которого предназначено изображение.
+
+**Хорошо**
+
+* `RefreshBarButtonIcon` / `RefreshBarButtonIcon@2x` and `RefreshBarButtonIconSelected` / `RefreshBarButtonIconSelected@2x`
+* `ArticleNavigationBarWhite` / `ArticleNavigationBarWhite@2x` and `ArticleNavigationBarBlackSelected` / `ArticleNavigationBarBlackSelected@2x`.
+
+<!--Images that are used for a similar purpose should be grouped in respective groups in an Images folder.//-->
+
+Изображения, используемые для одинаковых целей должны быть сгруппированы в папки.
+##### Важно: Перед добавлением изображения в ассет, переименуйте его. Если переименовать изображение после добавления, имя файла останется прежним.
+
 ## Структура файла
 
 ## Структура проекта
