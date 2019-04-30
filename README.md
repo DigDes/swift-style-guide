@@ -8,6 +8,7 @@
 * [Именование графических ресурсов](#именование-графических-ресурсов)
 * [Структура файла](#структура-файла)
 * [Структура проекта](#структура-проекта)
+* [Оформление коммитов](#оформление-коммитов)
 
 ## Форматирование
 ### Пробелы и табуляция
@@ -260,8 +261,6 @@ func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
 * `RefreshBarButtonIcon` / `RefreshBarButtonIcon@2x` and `RefreshBarButtonIconSelected` / `RefreshBarButtonIconSelected@2x`
 * `ArticleNavigationBarWhite` / `ArticleNavigationBarWhite@2x` and `ArticleNavigationBarBlackSelected` / `ArticleNavigationBarBlackSelected@2x`.
 
-<!--Images that are used for a similar purpose should be grouped in respective groups in an Images folder.//-->
-
 Изображения, используемые для одинаковых целей должны быть сгруппированы в папки.
 ##### Важно: Перед добавлением изображения в ассет, переименуйте его. Если переименовать изображение после добавления, имя файла останется прежним.
 
@@ -269,7 +268,17 @@ func numericValue(of digit: UnicodeScalar, radix: Int = 10) -> Int {
 
 ## Структура проекта
 
+## Оформление коммитов
+- Коммит должен содержать только одно логическое изменение.
+- Первая строка коммита (Subject) должна содержать не более 72 символов. 
+- Message Subject и Message Body коммита должны быть разделены пустой строкой.
+- Перед публикацией коммитов в удалённый репозиторий убедитесь, что все однотипные и незначительные коммиты были объединены.
+- Создавая коммит, подумайте, какая информация понадобится вам, если вы наткнётесь на этот коммит через год.
 
+Структура Message коммита:
+> [Ключ задачи в JIRA] Краткое описание изменений.
+>
+> Более подробное описание изменений. Оно должно объяснять, почему требуются изменения, как они решают проблему, и какие могут возникнуть ошибки.
 
 [comment]: # (Ссылки)
 [the one true brace style]: https://en.wikipedia.org/wiki/Indentation_style#Variant:_1TBS_(OTBS)
